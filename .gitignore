@@ -1,0 +1,6 @@
+.idea
+*/target
+*/*/target
+*.iml
+xianzhi-cms-ui/.vscode
+xianzhi-cms-ui/node_modules

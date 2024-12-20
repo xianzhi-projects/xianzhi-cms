@@ -1,5 +1,8 @@
 package io.xianzhi.cms.bootstrap.business;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.xianzhi.cms.bootstrap.dao.dataobj.ColumnDO;
+import io.xianzhi.cms.bootstrap.dao.mapper.ColumnMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -13,5 +16,5 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class ColumnBusiness {
+public class ColumnBusiness extends ServiceImpl<ColumnMapper, ColumnDO> {
 }

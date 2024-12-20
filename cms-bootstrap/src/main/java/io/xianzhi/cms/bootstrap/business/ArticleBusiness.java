@@ -1,5 +1,8 @@
 package io.xianzhi.cms.bootstrap.business;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.xianzhi.cms.bootstrap.dao.dataobj.ArticleDO;
+import io.xianzhi.cms.bootstrap.dao.mapper.ArticleMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -13,5 +16,5 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class ArticleBusiness {
+public class ArticleBusiness extends ServiceImpl<ArticleMapper, ArticleDO> {
 }

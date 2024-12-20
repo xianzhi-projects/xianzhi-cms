@@ -13,7 +13,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://dev-master.mysql.xianzhi.io:6001/dev_xianzhi_cms?characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.50.70:3306/dev_xianzhi_cms?characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
     password: xianzhi_2024
     # druid 连接池管理
@@ -87,7 +87,10 @@ xianzhi:
       key-pair-password: xianzhi_2024
       key-pair-alias: xianzhi
     permit-all-list:
+      - /
       - /oauth2/token
       - /captcha/getCaptcha
+      - /index
+      - /404
   idempotent:
     enable: false

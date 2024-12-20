@@ -36,4 +36,23 @@ public interface SiteMapper extends BaseMapper<SiteDO> {
      * @return 站点列表
      */
     List<SiteVO> selectSiteListByUserId(@Param("userId") String userId);
+
+
+    /**
+     * 判断站点名称是否存在
+     *
+     * @param siteName 站点名称
+     * @param siteId   站点ID
+     * @return 站点信息
+     */
+    boolean existsSiteBySiteNameAndIdNot(@Param("siteName") String siteName, @Param("siteId") String siteId);
+
+    /**
+     * 判断站点域名是否存在
+     *
+     * @param siteDomain 站点域名
+     * @param siteId     站点ID
+     * @return 是否存在
+     */
+    boolean existsSiteBySiteDomainAndIdNot(@Param("siteDomain") String siteDomain, @Param("siteId") String siteId);
 }

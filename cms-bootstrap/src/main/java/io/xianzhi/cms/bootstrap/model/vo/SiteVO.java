@@ -66,4 +66,9 @@ public class SiteVO implements Serializable {
      * 默认标识
      */
     private Boolean defaultFlag;
+
+    /**
+     * 站点排序
+     */
+    private Integer siteSort;
 }

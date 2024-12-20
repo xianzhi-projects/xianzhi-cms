@@ -12,4 +12,9 @@ import java.io.Serializable;
  */
 @Data
 public class SiteDTO implements Serializable {
+
+    /**
+     * 站点排序
+     */
+    private Integer siteSort;
 }

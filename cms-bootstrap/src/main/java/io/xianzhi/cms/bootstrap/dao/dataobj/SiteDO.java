@@ -60,6 +60,10 @@ public class SiteDO extends BaseDO {
      * 站点SEO标题
      */
     private String siteSeoTitle;
+    /**
+     * 站点排序
+     */
+    private Integer siteSort;
 
 
 }

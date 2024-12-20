@@ -16,7 +16,6 @@
 
 package io.xianzhi.cms.bootstrap.config;
 
-import io.xianzhi.boot.oauth2.authorization.converters.PasswordAuthenticationConverter;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

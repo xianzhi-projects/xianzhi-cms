@@ -25,6 +25,10 @@
             <groupId>io.xianzhi.boot</groupId>
             <artifactId>xianzhi-spring-boot-starter-mybatis-plus</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.xianzhi.boot</groupId>
+            <artifactId>xianzhi-spring-boot-starter-oauth2-authorization-server</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -1,21 +1,22 @@
-package io.xianzhi.cms.bootstrap.dao.dataobj;
+package io.xianzhi.cms.bootstrap.model.vo;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import io.xianzhi.boot.mybatis.plus.base.BaseDO;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
- * 站点实体
+ * 站点出参
  *
  * @author Max
  * @since 1.0.0
  */
 @Data
-@TableName(value = "xz_site")
-@EqualsAndHashCode(callSuper = true)
-public class SiteDO extends BaseDO {
+public class SiteVO implements Serializable {
 
+    /**
+     * 站点ID
+     */
+    private String id;
     /**
      * 站点名称
      */
@@ -39,7 +40,7 @@ public class SiteDO extends BaseDO {
     /**
      * 站点负责人
      */
-    private String siteOwner;
+    private UserVO siteOwner;
     /**
      * 站点备案号
      */
@@ -61,5 +62,8 @@ public class SiteDO extends BaseDO {
      */
     private String siteSeoTitle;
 
-
+    /**
+     * 默认标识
+     */
+    private Boolean defaultFlag;
 }

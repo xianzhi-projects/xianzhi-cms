@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://dev-master.mysql.xianzhi.io:6001/dev_xianzhi_cms?characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: xianzhi_2024
+  data:
+    redis:
+      host: 192.168.1.41
+      port: 6379
+      password: xianzhi_2024

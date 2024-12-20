@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
@@ -35,6 +36,10 @@ public class SiteIdFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         // 获取站点ID
         String siteId = request.getHeader(SiteUtils.REQUEST_HEADER_SITE_ID);
+        if (!StringUtils.hasText(siteId)) {
+            filterChain.doFilter(request, response);
+            return;
+        }
         SiteUtils.set(siteId);
         try {
             filterChain.doFilter(request, response);

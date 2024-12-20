@@ -8,6 +8,9 @@ package io.xianzhi.cms.bootstrap.utils;
  */
 public class SiteUtils {
 
+
+    private final static ThreadLocal<String> SITE_ID = new ThreadLocal<>();
+
     /**
      * 私有化构造器
      */
@@ -19,5 +22,29 @@ public class SiteUtils {
      */
     public static final String REQUEST_HEADER_SITE_ID = "X-Site-Id";
 
+    /**
+     * 获取当前站点ID
+     *
+     * @return 站点ID
+     */
+    public static String getCurrentSiteId() {
+        return SITE_ID.get();
+    }
+
+    /**
+     * 设置站点ID
+     *
+     * @param siteId 站点ID
+     */
+    public static void set(String siteId) {
+        SITE_ID.set(siteId);
+    }
+
+    /**
+     * 移除站点ID
+     */
+    public static void remove() {
+        SITE_ID.remove();
+    }
 
 }

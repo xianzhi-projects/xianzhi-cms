@@ -1,5 +1,6 @@
 package io.xianzhi.cms.bootstrap.controller;
 
+import io.xianzhi.cms.bootstrap.service.PluginsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,4 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/plugins")
 public class PluginsController {
+    /**
+     * 插件服务
+     */
+    private final PluginsService pluginsService;
 }

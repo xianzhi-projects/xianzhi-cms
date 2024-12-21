@@ -14,6 +14,11 @@ import java.io.Serializable;
 public class SiteDTO implements Serializable {
 
     /**
+     * 主键ID
+     */
+    private String id;
+
+    /**
      * 站点排序
      */
     private Integer siteSort;

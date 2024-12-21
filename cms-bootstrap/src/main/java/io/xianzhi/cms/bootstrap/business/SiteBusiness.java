@@ -3,16 +3,19 @@ package io.xianzhi.cms.bootstrap.business;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.xianzhi.cms.bootstrap.dao.dataobj.SiteDO;
 import io.xianzhi.cms.bootstrap.dao.mapper.SiteMapper;
+import io.xianzhi.cms.bootstrap.model.code.SiteCode;
 import io.xianzhi.cms.bootstrap.model.vo.SiteVO;
 import io.xianzhi.cms.bootstrap.model.vo.UserVO;
 import io.xianzhi.core.code.CommonCode;
 import io.xianzhi.core.exception.BusinessException;
+import io.xianzhi.core.result.Result;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * 站点业务类
@@ -67,6 +70,32 @@ public class SiteBusiness extends ServiceImpl<SiteMapper, SiteDO> {
             UserVO owner = ownerList.stream().filter(user -> item.getSiteOwner().equals(user.getId())).findFirst().orElse(null);
             return convert(item, owner);
         }).toList();
+    }
+
+    /**
+     * 根据ID查询站点信息，不存在抛出异常
+     *
+     * @param siteId 站点ID
+     * @return 站点信息
+     */
+    public SiteDO getSiteByIdOrThrow(String siteId) {
+        return getSiteByIdOrThrow(siteId, SiteCode.SITE_NOT_EXIST);
+    }
+
+    /**
+     * 根据ID查询站点信息，不存在抛出异常
+     *
+     * @param siteId 站点ID
+     * @param result 异常信息
+     * @return 站点信息
+     */
+    public SiteDO getSiteByIdOrThrow(String siteId, Result result) {
+        return getSiteById(siteId).orElseThrow(() -> new BusinessException(result));
+    }
+
+
+    public Optional<SiteDO> getSiteById(String siteId) {
+        return Optional.ofNullable(getById(siteId));
     }
 
 }

@@ -17,6 +17,7 @@ import io.xianzhi.core.result.ListResult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -117,5 +118,21 @@ public class SiteServiceImpl implements SiteService {
     @Override
     public List<SiteVO> getCurrentUserSiteList() {
         return siteMapper.selectSiteListByUserId(UserContextHolder.getCurrentUserId());
+    }
+
+    /**
+     * 校验站点DTO
+     *
+     * @param siteDTO 站点DTO
+     * @return 站点DO
+     */
+    private SiteDO checkedSiteDTO(SiteDTO siteDTO) {
+        SiteDO site;
+        if (StringUtils.hasText(siteDTO.getId())){
+            site = siteBusiness.getSiteById(siteDTO.getId());
+        }else{
+            site = new SiteDO();
+        }
+        return null;
     }
 }
